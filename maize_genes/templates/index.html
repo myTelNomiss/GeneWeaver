@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玉米基因数据库</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌽 玉米抗逆基因数据库</h1>
+            <div class="search-box">
+                <input type="search" id="searchInput"
+                       placeholder="输入基因名或功能关键词（如：ZmVPP1 或 干旱）"
+                       autocomplete="off">
+                <div class="search-tips">支持基因名和功能关键词混合搜索</div>
+            </div>
+        </header>
+
+        <main id="results"></main>
+
+        <!-- 基因详情弹窗 -->
+        <div id="geneModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalGeneName"></h2>
+                <div class="meta-info">
+                    <span class="verified-badge" id="modalVerified"></span>
+                    <span class="date" id="modalDate"></span>
+                </div>
+                <div class="gene-description">
+                    <h3>基因描述</h3>
+                    <p id="modalDescription"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
